@@ -1,0 +1,72 @@
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+/* Hero Section */
+
+#Hero-Section {
+  background-image: url("../img/banner_after.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left;
+}
+
+#Hero-Section p {
+  text-shadow: rgb(138, 117, 40) 1px 0 10px;
+}
+
+/* Mis trabajos */
+
+#Mis-trabajos .image-top {
+  height: 250px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Contacto */
+
+#Contacto form label {
+  font-weight: 700;
+  color: #373a3c;
+}
+
+@media (max-width: 768px) {
+  #Contacto form label {
+    font-weight: 400;
+  }
+
+  .navbar-brand{
+    width: 100px;
+  }
+
+}
+
+.focus:hover {
+    transition: color 0.1s;
+    color: #115321;
+    cursor: pointer;
+}
+.focus:active {
+    color: #12c13e;
+    transition: color 0.1s;
+    cursor: wait ;
+}
+        
+#pie a {
+  color: inherit;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+#pie a i {
+  transition: color 0.3s;
+}
+
+#pie a:focus, #pie a:active {
+  outline: none;
+}
+
+#pie a:hover {
+  color: #706da9;
+}

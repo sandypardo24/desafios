@@ -61,8 +61,8 @@ body {
 
 .contact-status img:hover {
   transform: scale(1.2);
+  cursor: pointer;
 }
-
 
 .contact-title img {
   width: 35px;

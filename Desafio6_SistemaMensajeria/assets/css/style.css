@@ -1,0 +1,136 @@
+* {
+  font-family: "Roboto", open sans-regular;
+}
+body {
+  min-height: 100vh;
+  min-width: 100vh;
+}
+
+.main-content {
+  display: flex;
+  flex: 0 0 0;
+}
+
+.aside-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: white;
+  width: 345px;
+  min-height: 100vh;
+  margin: 0;
+  flex: 0 0 1px;
+}
+.contact-status {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  border-style: groove;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 40px;
+}
+.contact-title {
+  display: flex;
+  justify-content: space-around;
+}
+.contact-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 18px;
+}
+.contact-data h3 {
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 2px;
+}
+.contact-data p {
+  font-size: 0.9rem;
+  margin: 0;
+  padding: 5px;
+  color: #828485;
+}
+
+.contact-status img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-top: 7px;
+  
+}
+.contact-title img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+.status-icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  color: #828485;
+}
+.button-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-style: groove;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.button-section .button {
+  background-color: #a491d2;
+  border: none;
+  color: white;
+  padding: 15px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  
+}
+.button-section .button:hover {
+  background-color:#CDC3E6;
+  transition: background-color 0.5s ease;
+}
+
+.button-section .button:focus {
+  background-color:#D4DCFF;
+  transition: background-color 0.5s ease;
+}
+
+.flex-container {
+  background-color: #fbf8f1;
+  display: flex;
+  flex: content;
+}
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: auto;
+}
+.main-container img {
+  width: 260px;
+  border-radius: 10px;
+  margin-bottom: 18px;
+}
+.main-container h1 {
+  border: 0;
+  padding: 5px;
+  font-size: 2.7rem;
+  margin: 0px;
+}
+.main-container p {
+  text-align: center;
+  font-weight: lighter;
+  font-size: 1rem;
+  padding: 0;
+  margin: 0;
+}

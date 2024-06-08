@@ -25,7 +25,8 @@ body {
   display: flex;
   justify-items: center;
   align-items: center;
-  border-style: groove;
+  border: 1px solid #000000;
+  /**border-style: groove;**/
   padding-top: 6px;
   padding-bottom: 6px;
   padding-left: 40px;

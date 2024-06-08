@@ -57,8 +57,13 @@ body {
   height: 50px;
   border-radius: 50%;
   margin-top: 7px;
-  
 }
+
+.contact-status img:hover {
+  transform: scale(1.2);
+}
+
+
 .contact-title img {
   width: 35px;
   height: 35px;

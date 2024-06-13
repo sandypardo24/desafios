@@ -16,7 +16,7 @@ body {
 
 .header {
     grid-area: header;
-    background-color: #4CAF50;
+    background-color: #4ca8c7;
     color: white;
     text-align: center;
     padding: 1rem;
@@ -90,7 +90,7 @@ body {
 
 .image-container button {
     padding: 0.5rem;
-    background-color: #4CAF50;
+    background-color: #4ca8c7;
     color: white;
     border: none;
     cursor: pointer;
@@ -98,12 +98,12 @@ body {
 }
 
 .image-container button:hover {
-    background-color: #45a049;
+    background-color: #4ca8c7;
 }
 
 .footer {
     grid-area: footer;
-    background-color: #4CAF50;
+    background-color: #4ca8c7;
     color: white;
     text-align: center;
     padding: 1rem;

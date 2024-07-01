@@ -1,0 +1,433 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "navbar"
+        "main"
+        "footer";
+    position: relative; /* Añade posición relativa para que los pseudo-elementos sean relativos a este contenedor */
+    overflow: hidden; /* Evita el desbordamiento de contenido */
+
+}
+.container::before, 
+.container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: -1; /* Coloca el fondo detrás del contenido */
+    opacity: 0; /* Inicialmente oculto */
+    animation: changeBackground 20s infinite;
+}
+.container::before {
+    background-image: url(../img/TeslaBack.jpg); /* Primera imagen de fondo */
+    animation-delay: 0s;
+}
+
+.container::after {
+    background-image: url(../img/download.jpeg); /* Segunda imagen de fondo */
+    animation-delay: 10s;
+}
+
+/*----------- NAVBAR --------------*/
+
+.navbar {
+    grid-area: navbar;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    color: #FF0000;
+}
+
+.icon-logo {
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    
+}
+
+.icon-logo:hover {
+    animation: animate-logo-flip 0.8s ease-in-out infinite alternate;
+}
+
+.icon-logo #tesla {
+    fill: transparent;
+    stroke: #000000;
+    stroke-width: 6;
+    stroke-dasharray: 400;
+    stroke-dashoffset: 800;
+    animation: animate-logo-tesla 2.5s linear infinite alternate;
+}
+
+.navbar-logo h3 {
+    animation: animate-logo-text 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) 2.5s
+        both;
+}
+
+.navbar-logo span {
+    color: #0f1626;
+}
+
+#expand-toggle {
+    display: none;
+}
+
+.menu-icon {
+    color: #000000;
+    font-size: 1.5rem;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.navbar-nav {
+    position: relative;
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    transition: all 0.2s ease-out;
+}
+
+.nav-link {
+    display: block;
+    padding: 1rem;
+    color: #000000;
+    transition: all 0.3s ease-out;
+    text-align: left; /* Align text to the left */
+}
+
+.nav-link:hover {
+    background-color: rgba(216, 187, 187, 0.8);
+    color: #0f1626;
+}
+
+#expand-toggle:checked ~ .navbar-nav {
+    padding: 1rem 0;
+    height: auto;
+    opacity: 1;
+}
+
+/*----------- MAIN ---------------*/
+
+.main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.4);
+    animation: animate-main-container 1.5s
+        cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    overflow-y: auto;
+    height: calc(100vh - 18rem);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    filter: saturate(100%);
+    transition: all 0.3s ease-out;
+}
+
+.card:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    filter: saturate(0%);
+}
+
+.card-img {
+    width: 100%;
+    object-fit: cover;
+    
+}
+
+.card-divider {
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.card-body {
+    width: 100%;
+    height: 4.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.card-body h3 {
+    color: #ff533d;
+}
+
+.card-body p {
+    font-size: 0.8rem;
+    text-align: center;
+    color: #0f1626;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.1rem;
+    padding: 0.5rem;
+}
+
+.page-link {
+    background-color: rgba(255, 255, 255, .8);
+    padding: 0.7rem 1rem;
+    transition: all 0.3s ease-out;
+}
+
+.page-link:first-child {
+    border-radius: 0.7rem 0 0 0.7rem;
+}
+
+.page-link:last-child {
+    border-radius: 0 0.7rem 0.7rem 0;
+}
+
+.page-link:hover {
+    background-color: rgba(255, 255, 255, .4);
+}
+
+/*----------- FOOTER -------------*/
+
+footer {
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.footer-icon a {
+    font-size: 1.5rem;
+    margin: 0 0.3rem;
+    color: #ad6363;
+}
+
+.footer-icon i:hover {
+    animation: animate-footer-icon 0.8s alternate;
+    color: #ff0000;
+}
+
+footer h4 {
+    color: #ff0000;
+}
+
+footer h4 span {
+    color: #0f1626;
+}
+
+footer p {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: #000000;
+}
+/*----------- MEDIA QUERY TABLE ------------*/
+
+@media screen and (min-width: 576px) {
+    .container {
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+            "navbar navbar"
+            "main main"
+            "footer footer";
+    }
+
+    .menu-icon {
+        display: none;
+    }
+
+    .navbar-nav {
+        height: auto;
+        width: auto;
+        display: flex;
+        margin-right: 0.5rem;
+        opacity: 1;
+    }
+
+    .nav-link {
+        font-size: 0.8rem;
+    }
+
+    .filter {
+        justify-content: left;
+    }
+
+    .cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/*----------- MEDIA QUERY DESKTOP ------------*/
+
+@media screen and (min-width: 992px) {
+    .container {
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+            "navbar main"
+            "navbar main"
+            "footer main";
+    }
+
+    .navbar {
+        flex-direction: column;
+        justify-content: left;
+    }
+
+    .navbar-logo {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .icon-logo {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+    }
+
+    .main {
+        margin-left: 0.1rem;
+    }
+
+    .cards {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        height: calc(100vh - 7rem);
+    }
+}
+
+/*------------ ANIMATIONS -------------*/
+
+@keyframes animate-logo-tesla {
+    0% {
+        stroke-dashoffset: 0;
+    }
+    40% {
+        stroke-dashoffset: 200;
+    }
+    80% {
+        stroke-dashoffset: 400;
+        fill: transparent;
+    }
+    100% {
+        stroke-dashoffset: 900;
+        fill: #FF0000;
+    }
+}
+
+@keyframes animate-logo-flip {
+    0% {
+        transform: rotateY(0);
+    }
+    100% {
+        transform: rotateY(100deg);
+    }
+}
+
+
+@keyframes animate-logo-text {
+    0% {
+        filter: blur(12px);
+        opacity: 0;
+    }
+    100% {
+        filter: blur(0px);
+        opacity: 2;
+    }
+}
+
+@keyframes animate-footer-icon {
+    0%,
+    100% {
+        transform: translateY(0%);
+        transform-origin: 50% 50%;
+    }
+    15% {
+        transform: translateY(-9px) rotate(-6deg);
+    }
+    30% {
+        transform: translateY(7px) rotate(6deg);
+    }
+    45% {
+        transform: translateY(-7px) rotate(-3.6deg);
+    }
+    60% {
+        transform: translateY(5px) rotate(2.4deg);
+    }
+    75% {
+        transform: translateY(-5px) rotate(-1.2deg);
+    }
+}
+
+@keyframes animate-main-container {
+    0% {
+        transform: rotateY(70deg);
+        transform-origin: right;
+        opacity: 0;
+    }
+    100% {
+        transform: rotateY(0);
+        transform-origin: right;
+        opacity: 1;
+    }
+}
+
+@keyframes changeBackground {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}

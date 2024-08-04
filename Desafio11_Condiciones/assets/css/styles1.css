@@ -1,0 +1,21 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+#toggle-image {
+    width: 300px;
+    height: auto;
+    cursor: pointer;
+}
+
+.border-red {
+    border: 2px solid red;
+}

@@ -10,7 +10,7 @@
   border: 1px solid black;
   background-color: white;
 }
-#newDivContainer {
+#nuevoContainer {
   display: flex;
   gap: 10px;
 }

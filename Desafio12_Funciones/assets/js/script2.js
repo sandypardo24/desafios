@@ -1,4 +1,4 @@
-// Cambiar color de los divs a negro al hacer clic
+// Cambiar color de los divs a negro
 const divs = document.querySelectorAll("#container > div");
 divs.forEach((div) => {
   div.addEventListener("click", function () {
@@ -6,21 +6,20 @@ divs.forEach((div) => {
   });
 });
 
-// Variable global para almacenar el color según la tecla presionada
-let selectedColor;
+let colorSeleccionado;
 
 document.addEventListener("keydown", function (event) {
   const keyDiv = document.getElementById("key");
 
   if (event.key === "a") {
-    selectedColor = "pink";
-    keyDiv.style.backgroundColor = selectedColor;
+    colorSeleccionado = "pink";
+    keyDiv.style.backgroundColor = colorSeleccionado;
   } else if (event.key === "s") {
-    selectedColor = "orange";
-    keyDiv.style.backgroundColor = selectedColor;
+    colorSeleccionado = "orange";
+    keyDiv.style.backgroundColor = colorSeleccionado;
   } else if (event.key === "d") {
-    selectedColor = "skyblue";
-    keyDiv.style.backgroundColor = selectedColor;
+    colorSeleccionado = "skyblue";
+    keyDiv.style.backgroundColor = colorSeleccionado;
   } else if (event.key === "q") {
     createNewDiv("purple");
   } else if (event.key === "w") {
@@ -30,10 +29,10 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
-// Función para crear un nuevo div con un color específico
+// Función para crear un nuevo div //
 function createNewDiv(color) {
   const newDiv = document.createElement("div");
   newDiv.className = "new-div";
   newDiv.style.backgroundColor = color;
-  document.getElementById("newDivContainer").appendChild(newDiv);
+  document.getElementById("nuevoContainer").appendChild(newDiv);
 }

@@ -9,11 +9,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const contenedorAlquiler = document.getElementById("propiedadesEnAlquiler");
 
   if (contenedorVenta) {
-    pintartarjeta(propiedadesEnVenta, contenedorVenta);
+    pintartarjeta(propiedadesEnVenta.slice(0, 3), contenedorVenta);
   }
 
   if (contenedorAlquiler) {
-    pintartarjeta(propiedadesEnAlquiler, contenedorAlquiler);
+    pintartarjeta(propiedadesEnAlquiler.slice(0, 3), contenedorAlquiler);
   }
 });
 

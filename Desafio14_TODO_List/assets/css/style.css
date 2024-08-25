@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 2px;
+  border: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: rgb(178, 184, 182);
+}
+
+#marco {
+  border: 5px solid gray;
+}
+hr {
+  border: solid 1px gray;
+  width: 100%;
+  height: 0px;
+}
+
+input {
+  width: 80%;
+  height: 2rem;
+  border: 1px solid black;
+}
+
+#addTaskBtn {
+  background-color: green;
+  color: white;
+  height: 2rem;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-left: 10px;
+  border-radius: 5px;
+}

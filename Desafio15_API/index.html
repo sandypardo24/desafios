@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Monedas Nacional</title>
+    <link rel="stylesheet" href="./assets/css/normalize.css">
+    <link rel="stylesheet" href="./assets/css/style.css"> 
+    <script src="https://kit.fontawesome.com/ac18673302.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/jpg" href="./assets/img/icons8-moneda-96.png"/>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="interfaz">
+        <h2><i class="fa-solid fa-money-bill-1-wave"></i> Conversor de monedas Nacional</h2>
+        <form id="formularioConversion">
+            <label for="pesosClpValue">Pesos CLP</label>
+            <input type="number" id="pesosClpValue" placeholder="25000 CLP" required>
+
+            <label for="currency">Moneda a convertir: <i class="fa-solid fa-circle-dollar-to-slot"></i> <i class="fa-solid fa-euro-sign"></i> <i class="fa-brands fa-bitcoin"></i></label>
+            <select id="currency">
+                <option value="dolar"> <i class="fa-solid fa-circle-dollar-to-slot"></i>Dolar</option>
+                <option value="euro">Euro</option>
+                <option value="uf">Unidad de Fomento (UF)</option>
+                <option value="bitcoin">Bitcoin</option>
+                <option value="utm">UTM</option>
+            </select>
+
+            <button type="submit">Buscar</button>
+        </form>
+        <p id="resultado">Resultado: $0.00</p>
+        <canvas id="seccionGrafico" width="400" height="200"></canvas>
+    </div>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

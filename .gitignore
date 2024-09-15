@@ -1,4 +1,4 @@
 *.log   # Excluye todos los archivos .log
 *.env   # Excluye todos los archivos .env
 
-*DS_
+*.DS_Store

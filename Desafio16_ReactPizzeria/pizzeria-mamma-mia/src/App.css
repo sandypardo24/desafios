@@ -1,46 +1,19 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
 .card {
-  padding: 2em;
+  width: 100%;
+  max-width: 350px;
+  padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease;
   text-align: center;
+  margin: 10px auto; /* Añadir auto para que las tarjetas estén centradas verticalmente */
 }
 
 .card:hover {
@@ -54,15 +27,18 @@
   border-radius: 8px;
 }
 
+.card .btn-container {
+  display: flex;
+  justify-content: center;
+}
+
 .card .btn {
-  margin: 10px 5px;
-  padding: 10px 20px;
+  margin: 0 8px;
   border: none;
   border-radius: 5px;
   font-size: 1rem;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
 }
 
 .card .btn-primary {
@@ -89,13 +65,6 @@
   font-weight: bold;
 }
 
-.card-text {
-  margin-top: 10px;
-  margin-bottom: 15px;
-  font-size: 0.9rem;
-  color: #555;
-}
-
 .price {
   font-size: 1.3rem;
   font-weight: bold;
@@ -113,13 +82,12 @@
 
 .navbar .navbar-brand {
   color: white;
-  margin-left: 10px;
 }
 
 .navbar-left .btn {
   background-color: #f8f9fa;
   border: none;
-  margin-left: 5px;
+  margin: 0 5px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -130,10 +98,7 @@
 
 .navbar-right .btn {
   display: flex;
-  align-items: center;
-  background-color: #f8f9fa;
   border: none;
-  margin-right: 10px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -143,83 +108,66 @@
 }
 
 .header {
-  padding: 100px 20px;
+  border-radius: 0 0 10px 10px;
   background-size: cover;
   background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  animation: changeBackground 20s infinite ease-in-out;
   color: white;
-  border-radius: 0 0 10px 10px;
+  transition: background-image 1s ease-in-out;
 }
 
 .header h1 {
-  font-size: 3rem;
-  font-weight: bold;
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 .header p {
-  font-size: 1.2rem;
-  margin-top: 10px;
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out 1s forwards;
+  color: white;
 }
 
-.header .btn {
-  margin: 10px 5px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #007bff;
-  color: white;
-  transition: background-color 0.3s ease, color 0.3s ease;
+@keyframes changeBackground {
+  0% {
+    background-image: url('./img/banner.jpg');
+  }
+  33% {
+    background-image: url('./img/banner1.jpg');
+  }
+  66% {
+    background-image: url('./img/banner2.jpg');
+  }
+  100% {
+    background-image: url('./img/banner.jpg');
+  }
 }
 
-.header .btn:hover {
-  background-color: #0056b3;
-  color: white;
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }
 
 .container {
-  max-width: 1200px;
-  margin: 20px auto;
-  padding: 0 20px;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Cambiado a center */
 }
 
-.row {
-  display: flex;
-  justify-content: space-between;
-}
 
 .col-md-4 {
-  flex-basis: 30%;
-}
-
-.card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.card-body {
-  padding: 20px;
-}
-
-.card-title {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
-.card-text {
-  font-size: 1rem;
-  color: #555;
-}
-
-.card p {
-  font-weight: bold;
-}
-
-.card .btn {
-  margin-top: 10px;
+  flex: 1 1 calc(33.333% - 20px); /* Permite que cada tarjeta ocupe un tercio del ancho con espacio */
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .footer {
@@ -246,4 +194,24 @@
 
 .bg-dark {
   background-color: #343a40;
+}
+
+/* Responsivo */
+
+/* Para pantallas pequeñas (celulares) */
+@media (max-width: 767px) {
+  .col-md-4 {
+    flex: 1 1 100%; /* Las tarjetas ocuparán el 100% del ancho en pantallas pequeñas */
+  }
+
+  .navbar {
+    flex-direction: column;
+  }
+}
+
+/* Para pantallas medianas (tablets) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .col-md-4 {
+    flex: 1 1 45%; /* Dos tarjetas por fila en pantallas medianas */
+  }
 }
